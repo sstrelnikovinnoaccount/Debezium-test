@@ -1,0 +1,9 @@
+spring:
+  kafka:
+    bootstrap-servers: http://localhost:9092
+    consumer:
+      group-id: pg-consumer
+      topics: data.cdc.debezium_db
+
+server:
+  port: 8081

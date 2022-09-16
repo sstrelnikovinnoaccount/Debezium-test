@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+
+spring:
+  flyway:
+    url: jdbc:postgresql://localhost:5432/debezium_db
+    user: postgres
+    password: postgres
+    enabled: true
+    locations: classpath:/database/migration/
+    baseline-on-migrate: true
+    schemas: public
+    table: flyway_schema_history_security
+  datasource:
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/debezium_db
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate.default_schema: public
